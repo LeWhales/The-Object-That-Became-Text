@@ -1,8 +1,6 @@
 const preferences = { theme: "dark", compact: true };
 
-localStorage.getItem("preferences", preferences);
+localStorage.setItem("preferences", JSON.stringify(preferences));
 
-function savepreferences(pref) {
-    const saved = localStorage.setItem(preferences, JSON.stringify(pref));
-}
+const saved = JSON.parse(localStorage.getItem("preferences"));
 console.log(saved.theme);
